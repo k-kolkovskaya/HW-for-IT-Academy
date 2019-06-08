@@ -1,7 +1,7 @@
-import {Room} from '../Room.js'
-import {Person} from '../Person.js'
-import {Computer} from '../Computer.js'
-import {Mouse} from '../Mouse.js'
+import {Room} from './Room.js'
+import {Person} from './Person.js'
+import {Computer} from './Computer.js'
+import {Mouse} from './Mouse.js'
 
 
 const kristina = new Person('Kristina', 25, 'student');
