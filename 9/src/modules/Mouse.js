@@ -15,10 +15,13 @@ function Mouse(isLaser) {
 Mouse.prototype.click = function(isClicked) {
     isClicked = isClicked ? true : false;
     if(isClicked) {
-        console.log("I'm clicked!");
+       let message =  "I'm clicked!"; //Область видимости переменной message ограничена блоком условного оператора if
+       console.log(message);
     } else {
-        console.log("Click me!");
+        message =  "Click me!";
+       console.log(message);
     }
+    console.log(message); //Вот тут message видна не будет
 };
 
 
