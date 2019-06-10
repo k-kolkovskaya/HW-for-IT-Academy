@@ -31,16 +31,18 @@ let differenceSeconds = 0;
 
 function startTimer() {
     intervalID = setInterval(timerTick, 1000);
-    startTime = new Date().getTime() + 300000;
+    startTime = new Date().getTime() + 60000;
 }
 
 function stopTimer () {
     clearInterval(intervalID);
-    lastDifferenceSeconds = differenceSeconds - 300;
+    lastDifferenceSeconds = differenceSeconds - 60;
 }
 
 function resetTimer() {
-    htmlElements.stopwatch.innerHTML = '00:05:00';
+    lastDifferenceSeconds = 0;
+    startTime = new Date().getTime();
+    htmlElements.stopwatch.innerHTML = '00:01:00';
     clearInterval(intervalID);
 }
 
@@ -52,6 +54,10 @@ function timerTick() {
     const hours = parseInt(differenceSeconds / 3600);
 
     htmlElements.stopwatch.innerHTML = `${addNull(hours)}:${addNull(minutes)}:${addNull(seconds)}`;
+
+    if(htmlElements.stopwatch.innerHTML === "00:00:00") {
+        resetTimer ();
+    }
 }
 
 
