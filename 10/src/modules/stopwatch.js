@@ -22,25 +22,26 @@ function addNull(data) {
     }
 }
 
+let startTime = new Date().getTime();
 function setStopwatch() {
-    const startTime = new Date().getTime();
     const intervalID = setInterval(stopwatch, 1000);
-
-    function stopStopwatch () {
-        clearInterval(intervalID);
-    }
-
-    htmlElements.stopBtn.addEventListener('click', stopStopwatch);
-
 
     function stopwatch() {
         const difference = (new Date().getTime() - startTime) / 1000;
-        let seconds = parseInt(difference % 60);
-        let minutes = parseInt((difference / 60) % 60);
-        let hours = parseInt(difference / 3600);
+        const seconds = parseInt(difference % 60);
+        const minutes = parseInt((difference / 60) % 60);
+        const hours = parseInt(difference / 3600);
 
         htmlElements.stopwatch.innerHTML = `${addNull(hours)}:${addNull(minutes)}:${addNull(seconds)}`;
-    }    
+    
+
+        htmlElements.stopBtn.addEventListener('click', stopStopwatch);
+
+        function stopStopwatch () {
+            clearInterval(intervalID);
+            startTime = difference*1000 + startTime;
+        }
+    }
 }
 
 
