@@ -1,5 +1,5 @@
 const htmlElements = {
-    stopwatch: document.querySelector('.container [data-mode="timer"] .output'),
+    timer: document.querySelector('.container [data-mode="timer"] .output'),
     startBtn: document.querySelector('.container [data-mode="timer"] .buttons button.start'),
     stopBtn: document.querySelector('.container [data-mode="timer"] .buttons button.stop'),
     resetBtn: document.querySelector('.container [data-mode="timer"] .buttons button.reset')
@@ -53,9 +53,9 @@ function timerTick() {
     const minutes = parseInt((differenceSeconds / 60) % 60);
     const hours = parseInt(differenceSeconds / 3600);
 
-    htmlElements.stopwatch.innerHTML = `${addNull(hours)}:${addNull(minutes)}:${addNull(seconds)}`;
+    htmlElements.timer.innerHTML = `${addNull(hours)}:${addNull(minutes)}:${addNull(seconds)}`;
 
-    if(htmlElements.stopwatch.innerHTML === "00:00:00") {
+    if(htmlElements.timer.innerHTML === "00:00:00") {
         resetTimer ();
     }
 }
