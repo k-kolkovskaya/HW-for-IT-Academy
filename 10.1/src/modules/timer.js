@@ -31,18 +31,18 @@ let differenceSeconds = 0;
 
 function startTimer() {
     intervalID = setInterval(timerTick, 1000);
-    startTime = new Date().getTime() + 60000;
+    startTime = new Date().getTime() + 300000;
 }
 
 function stopTimer () {
     clearInterval(intervalID);
-    lastDifferenceSeconds = differenceSeconds - 60;
+    lastDifferenceSeconds = differenceSeconds - 300;
 }
 
 function resetTimer() {
     lastDifferenceSeconds = 0;
     startTime = new Date().getTime();
-    htmlElements.stopwatch.innerHTML = '00:01:00';
+    htmlElements.timer.innerHTML = '00:05:00';
     clearInterval(intervalID);
 }
 
