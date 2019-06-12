@@ -66,6 +66,10 @@ function StopwatchTimer(initMode, initSeconds) {
         const hours = parseInt(differenceSeconds / 3600);
 
         htmlElements.element.innerHTML = `${addNull(hours)}:${addNull(minutes)}:${addNull(seconds)}`;
+
+        if(mode === 'timer' && htmlElements.element.innerHTML === '00:00:00') {
+            onResetBtnClicked();
+        }
     }
 
     htmlElements.startBtn.addEventListener('click', onStartBtnClicked);
