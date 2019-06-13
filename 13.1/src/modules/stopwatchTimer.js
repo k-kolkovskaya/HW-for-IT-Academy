@@ -75,9 +75,9 @@ function StopwatchTimer(initMode, initSeconds) {
         }
     }
 
-    this.htmlElements.startBtn.addEventListener('click', onStartBtnClicked);
-    this.htmlElements.stopBtn.addEventListener('click', onStopBtnClicked);
-    this.htmlElements.resetBtn.addEventListener('click', onResetBtnClicked);
+    htmlElements.startBtn.addEventListener('click', onStartBtnClicked);
+    htmlElements.stopBtn.addEventListener('click', onStopBtnClicked);
+    htmlElements.resetBtn.addEventListener('click', onResetBtnClicked);
 }
 
 
