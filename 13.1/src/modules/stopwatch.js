@@ -1,15 +1,19 @@
-import {StopwatchTimer} from './stopwatchTimer.js';
+import {
+    StopwatchTimer
+} from './stopwatchTimer.js';
 
-function Stopwatch() {
-    StopwatchTimer.call(this, 'stopwatch', 0);
+class Stopwatch extends StopwatchTimer {
+    constructor(initMode, initSeconds) {
+        super(initMode, initSeconds);
+    }
+
+    showInfo() {
+        console.log(this);
+    }
 }
 
-Stopwatch.prototype = Object.create(StopwatchTimer.prototype);
-
-Stopwatch.prototype.showInfo = function() {
-    console.log(this);
-}
 
 
-
-export { Stopwatch };
+export {
+    Stopwatch
+};

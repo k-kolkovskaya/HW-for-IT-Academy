@@ -5,7 +5,7 @@ function addClass(className, elements) {
 }
 
 function removeClass(className, elements) {
-  elements.forEach(function(element) {
+  elements.forEach(function (element) {
     element.classList.remove(className);
   });
 }
@@ -14,4 +14,6 @@ function ClassHelper() {}
 ClassHelper.addClass = addClass;
 ClassHelper.removeClass = removeClass;
 
-export { ClassHelper };
+export {
+  ClassHelper
+};
