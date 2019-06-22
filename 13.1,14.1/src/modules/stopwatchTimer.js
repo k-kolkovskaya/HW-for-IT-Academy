@@ -76,7 +76,7 @@ class StopwatchTimer {
         }
     }
 
-    init() {
+    init = () => {
         this.htmlElements.startBtn.addEventListener('click', this.onStartBtnClicked);
         this.htmlElements.stopBtn.addEventListener('click', this.onStopBtnClicked);
         this.htmlElements.resetBtn.addEventListener('click', this.onResetBtnClicked);

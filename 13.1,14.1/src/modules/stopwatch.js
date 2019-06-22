@@ -3,8 +3,8 @@ import {
 } from './stopwatchTimer.js';
 
 class Stopwatch extends StopwatchTimer {
-    constructor(initMode, initSeconds) {
-        super(initMode, initSeconds);
+    constructor() {
+        super('stopwatch', 0);
     }
 
     showInfo() {

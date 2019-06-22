@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img:first-child {
+  width: 600px;
+}
