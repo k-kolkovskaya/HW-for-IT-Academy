@@ -9,10 +9,10 @@ class Tabs {
   switchToMode = () => {
     removeClass(this.htmlElements.links, "selected");
     hideTabsContent(this.htmlElements.tabsContent);
-    let mode = this.htmlElements.links.dataset.mode;
+    let mode = event.currentTarget.dataset.mode;
     let tabContent = document.querySelector(`div[data-mode="${mode}"]`);
     tabContent.classList.remove("hidden");
-    addClass(this, "selected");
+    addClass(event.currentTarget, "selected");
   };
 
   init() {
