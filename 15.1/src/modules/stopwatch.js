@@ -3,8 +3,9 @@ import {
 } from './stopwatchTimer.js';
 
 function Stopwatch() {
-    let stopwatch = StopwatchTimer.bind(this, 'stopwatch', 0);
-    stopwatch();
+
+    let args = ['stopwatch', 0];
+    StopwatchTimer.apply(this, args);
 }
 
 Stopwatch.prototype = Object.create(StopwatchTimer.prototype);

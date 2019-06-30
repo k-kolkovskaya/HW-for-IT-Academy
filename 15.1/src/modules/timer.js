@@ -3,7 +3,7 @@ import {
 } from './stopwatchTimer.js';
 
 function Timer() {
-    let timer = StopwatchTimer.bind(this, 'timer', 10);
+    let timer = StopwatchTimer.bind(this, 'timer', 300);
     timer();
 }
 
