@@ -1,0 +1,21 @@
+input,
+select {
+  display: block;
+  margin-bottom: 10px;
+}
+
+body {
+  background-color: var(--main-color);
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
