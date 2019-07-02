@@ -1,0 +1,26 @@
+.container {
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 200px;
+  border: 1px solid black;
+}
+
+td {
+  height: 60px;
+  border: 1px solid black;
+}
+
+.cross {
+  background: url('http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w18h181338911473cross.png') no-repeat center;
+}
+
+.round {
+  background: url('http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w18h181338911463round.png') no-repeat center;
+}
