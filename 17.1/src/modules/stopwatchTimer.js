@@ -37,8 +37,6 @@ function StopwatchTimer(initMode, initSeconds) {
             onStopwatchTimerTick();
             intervalID = setTimeout(tick, 1000);
         }, 1000);
-
-        //intervalID = setInterval(onStopwatchTimerTick, 1000);
         startTime = new Date().getTime() + initSeconds * 1000;
     }
 
