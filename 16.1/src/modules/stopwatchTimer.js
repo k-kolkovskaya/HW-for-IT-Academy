@@ -1,18 +1,14 @@
 import {
     ClassHelper
 } from './classHelper.js';
-import {
-    Stopwatch
-} from './stopwatch.js';
-
-import {
-    Timer
-} from './timer.js';
 
 function StopwatchTimer(initMode, initSeconds) {
+    const self = this;
 
-
+    let startTime;
     let intervalID;
+    let lastDifferenceSeconds = 0;
+    let differenceSeconds = 0;
     let mode = initMode;
 
     const htmlElements = {
@@ -59,17 +55,7 @@ function StopwatchTimer(initMode, initSeconds) {
 
     function onStopwatchTimerTick() {
 
-
-        switch (mode) {
-            case 'stopwatch':
-                Stopwatch();
-                break;
-            case 'timer':
-                Timer();
-                break;
-            default:
-                throw new Error('Mode is not found');
-        }
+        differenceSeconds = self.setCurrentDifference(lastDifferenceSeconds, startTime);
 
         const seconds = parseInt(differenceSeconds % 60);
         const minutes = parseInt((differenceSeconds / 60) % 60);

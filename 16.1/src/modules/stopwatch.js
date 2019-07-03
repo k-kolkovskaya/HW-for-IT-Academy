@@ -2,14 +2,10 @@ import {
     StopwatchTimer
 } from './stopwatchTimer.js';
 
-let differenceSeconds = 0;
-let lastDifferenceSeconds = 0;
-let startTime;
-
 function Stopwatch() {
-    StopwatchTimer.bind(this, 'stopwatch', 0);
-    const differenceMilliseconds = new Date().getTime() - startTime;
-    differenceSeconds = lastDifferenceSeconds + Math.round(differenceMilliseconds / 1000);
+
+    let args = ['stopwatch', 0];
+    StopwatchTimer.apply(this, args);
 }
 
 Stopwatch.prototype = Object.create(StopwatchTimer.prototype);
@@ -18,7 +14,9 @@ Stopwatch.prototype.showInfo = function () {
     console.log(this);
 }
 
-
+Stopwatch.prototype.setCurrentDifference = function (lastDifferenceSeconds, startTime) {
+    return lastDifferenceSeconds + Math.round((new Date().getTime() - startTime) / 1000);
+};
 
 export {
     Stopwatch
