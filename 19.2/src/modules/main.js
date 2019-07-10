@@ -1,8 +1,8 @@
-let delay = ms => {
-  return new Promise(resolve => {
-    const time = ms;
-    setTimeout(() => resolve(time), ms);
-  });
-};
+import {
+  Data
+} from './data.js';
 
-delay(2000).then(getTime => console.log(getTime));
+const data = new Data();
+const url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+data.getUsefulContents(url, data => console.log(data));
