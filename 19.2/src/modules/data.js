@@ -9,7 +9,9 @@ function getJSON(url, callback) {
 
 function Data() {}
 Data.prototype.getUsefulContents = function (url, callback) {
-    getJSON(url, data => callback(JSON.parse(data)));
+    getJSON(url, function(data){
+        callback(JSON.parse(data))
+    });
 };
 
 export {
