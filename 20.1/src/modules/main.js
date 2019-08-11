@@ -5,4 +5,4 @@ import {
 const data = new Data();
 const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
-data.getUsefulContents(url).then(data => console.log(data));
+data.getUsefulContents(url).then(data.showInfo);
